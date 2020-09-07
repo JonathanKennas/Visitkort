@@ -1,0 +1,73 @@
+﻿<!--<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>-->
+
+<h1>Visitkort Data</h1>
+
+<p>This component demonstrates fetching Employee data from the server.</p>
+
+<p *ngIf="!visList"><em>Loading...</em></p>
+
+<p>
+
+    <a [routerLink]="['/register-visitkort']">Skapa ny</a>
+
+</p>
+
+<table class='table' *ngIf="visList">
+
+    <thead>
+
+        <tr>
+
+            <th>Id</th>
+
+            <th>Name</th>
+
+            <th>SurName</th>
+
+            <th>Telephone</th>
+
+            <th>Email</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        <tr *ngFor="let vis of visList">
+
+            <td>{{ vis.id }}</td>
+
+            <td>{{ vis.name }}</td>
+
+            <td>{{ vis.surname }}</td>
+
+            <td>{{ vis.telephone }}</td>
+
+            <td>{{ vis.email }}</td>
+
+            <td>
+
+            <td>
+
+                <a [routerLink]="['/visitkort/edit/', vis.id]">Edit</a> |
+
+                <a [routerLink]="" (click)="delete(vis.id)">Delete</a>
+
+            </td>
+
+        </tr>
+
+    </tbody>
+
+</table>
+

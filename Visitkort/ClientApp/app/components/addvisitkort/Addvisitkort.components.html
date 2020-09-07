@@ -1,0 +1,79 @@
+﻿<!--<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>-->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+
+<body>
+    <h1>{{title}}</h1>
+    <h3>Visitkort</h3>
+    <hr />
+
+    <form [formGroup]="vistkortForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+        <div class="form-group row">
+            <label class=" control-label col-md-12" for="Name">Namn</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" formControlName="name">
+            </div>
+            <span class="text-danger" *ngIf="visitkortForm.hasError('required', 'name') && formDir.submitted">
+                Namn måste fyllas i.
+            </span>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-12" for="SurName">Efternamn</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" formControlName="surName">
+                <!--<select class="form-control" data-val="true" formControlName="surName">
+        <option value="">-- Select Gender --</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>-->
+            </div>
+            <span class="text-danger" *ngIf="visitkortForm.hasError('required', 'surName') && formDir.submitted">
+               Efternamn måste fyllas i.
+            </span>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-12" for="Telephone">Telefonnummer</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" formControlName="telephone">
+            </div>
+
+            <span class="text-danger" *ngIf="visitkortForm.hasError('required', 'telephone') && formDir.submitted">
+                Telefonnummer måste fyllas i.
+            </span>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-12" for="Email">E-post</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" formControlName="email" data-val="true">
+            </div>
+            <span class="text-danger" *ngIf="visitkortForm.hasError('required', 'email') && formDir.submitted">
+                E-post måste fyllas i.
+            </span>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-default">Spara</button>
+            <button class="btn" (click)="cancel()">Avbryt</button>
+        </div>
+    </form>
+</body>
+</html>
