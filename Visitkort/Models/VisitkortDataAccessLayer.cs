@@ -9,7 +9,8 @@ namespace Visitkort.Models
 {
     public class VisitkortDataAccessLayer
     {
-        string connectionString = "Server=tcp:explorenow.database.windows.net,1433;Initial Catalog=ExploreNow;Persist Security Info=False;User ID=sysadmin;Password=kennas123!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        string connectionString = "Server=tcp:explorenow.database.windows.net,1433;Initial Catalog=ExploreNow;Persist Security Info=False;User ID=sysadmin;Password=PASSWORD;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        // Lägg till lösenord i anslutningssträngen
 
         //Visar alla visitkort
         public IEnumerable<VisitkortClass> GetAllVisitkort()
